@@ -32,7 +32,7 @@ def load_json():
         except:
                 print('Aready removed the columns')
         return us_state
-
+#data obtained from New York times github : https://github.com/nytimes/covid-19-data
 @st.cache
 def load_cases_csv():
         us_state_grouped_df = pd.read_csv('covid-data/us_state_cases_grouped.csv')
@@ -166,9 +166,6 @@ with row2_2:
             get_size=16,
             get_color=[255, 0, 0],
             get_angle=0,
-            # Note that string constants in pydeck are explicitly passed as strings
-            # This distinguishes them from columns in a data set
-            #get_text_anchor=String("middle"),
             get_alignment_baseline=String("bottom"),
         )
 
@@ -200,6 +197,7 @@ with row2_2:
                 get_fill_color="[255, 255-255*daily_deaths/1000, 0]")
         tooltip={"html": "<b>State:</b> {NAME}</br> <b>Deaths:</b> {daily_deaths}"}
         st.write(pdk.Deck(layers=[text, geojson, column], initial_view_state=INITIAL_VIEW_STATE, tooltip=tooltip))
+        
         #plot daily total cases 
         daily_total_cases_plot = alt.Chart(daily_total_results).mark_area(
                 color="lightblue",
