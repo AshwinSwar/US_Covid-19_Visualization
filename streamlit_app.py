@@ -40,7 +40,7 @@ def load_cases_csv():
 
 @st.cache
 def load_mask_geojson():
-        county_mask_data = gpd.read_file(r'covid-data\mask_data_cleaned.geojson')
+        county_mask_data = gpd.read_file('covid-data/mask_data_cleaned.geojson')
         return county_mask_data
 
 us_state = load_json()
