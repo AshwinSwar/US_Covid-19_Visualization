@@ -1,12 +1,11 @@
 import pandas as pd
 import numpy as np
-from platformdirs import user_state_dir
 import pydeck as pdk
 from pydeck.types import String
 import datetime
 from datetime import date
 import json
-from pygments import highlight
+#from pygments import highlight
 import streamlit as st
 import os
 import altair as alt
