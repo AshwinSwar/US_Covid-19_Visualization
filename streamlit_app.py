@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
 from platformdirs import user_state_dir
 import pydeck as pdk
 from pydeck.types import String
