@@ -4,8 +4,7 @@ Data visualization of Covid-19 data over time on 3D topographic maps.
 You can scroll through time to see the cases and deaths in each of the US states on a 3d map. <br>
 You can also see the mask usage in each county and the fraction of people who regularly wear mask. <br>
 <br>
-You can interact with this app here: <br>
-https://share.streamlit.io/ashwinswar/us_covid-19_visualization
+You can interact with this app here:  [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/ashwinswar/us_covid-19_visualization)
 <br>
 <br>
 ![](images/covi-visualization.png)
