@@ -38,9 +38,10 @@ def load_cases_csv():
         daily_total_results.date = pd.to_datetime(daily_total_results.date)
         return us_state_grouped_df, daily_total_results
 
-@st.cache
+@st.cache(allow_output_mutation=True)
 def load_mask_geojson():
         county_mask_data = gpd.read_file('covid-data/mask_data_cleaned.geojson')
+        county_mask_data.ALWAYS_and_FREQUENTLY = np.round(county_mask_data.ALWAYS_and_FREQUENTLY,3)
         return county_mask_data
 
 us_state = load_json()
@@ -56,7 +57,9 @@ with row1_1:
 with row1_2:
         st.write('This web app allows the user to see the coronavirus cases and \
                 deaths over time grouped by states. The absolute scales in each \
-                figure is different for better visualization.')
+                figure is different for better visualization. Select the date to \
+                see cases in states over time. The plot below shows the total \
+                cases and the current time selected.')
 
 
 cols1,_ = st.columns((1,0.001)) # To make it narrower
